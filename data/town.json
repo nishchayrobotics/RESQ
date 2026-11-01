@@ -1,0 +1,64 @@
+{
+  "format": "resq-town",
+  "version": 1,
+  "name": "Harbour District",
+  "locations": [
+    {"id": "lighthouse_point", "name": "Lighthouse Point", "x": 300, "y": 70, "label_side": "above"},
+    {"id": "dockyards", "name": "Dockyards", "x": 120, "y": 200, "label_side": "above"},
+    {"id": "riverside_trauma", "name": "Riverside Trauma", "x": 520, "y": 150, "label_side": "right"},
+    {"id": "north_hill", "name": "North Hill", "x": 800, "y": 80, "label_side": "right"},
+    {"id": "civic_junction", "name": "Civic Junction", "x": 360, "y": 290, "label_side": "left"},
+    {"id": "harbour_station", "name": "Harbour Station", "x": 90, "y": 440, "label_side": "below"},
+    {"id": "market_square", "name": "Market Square", "x": 270, "y": 470, "label_side": "below"},
+    {"id": "old_town", "name": "Old Town", "x": 520, "y": 420, "label_side": "below"},
+    {"id": "university_quarter", "name": "University Quarter", "x": 700, "y": 300, "label_side": "right"},
+    {"id": "eastgate", "name": "Eastgate", "x": 860, "y": 480, "label_side": "below"}
+  ],
+  "roads": [
+    {"id": "R1", "a": "harbour_station", "b": "market_square", "minutes": 1},
+    {"id": "R2", "a": "harbour_station", "b": "dockyards", "minutes": 4},
+    {"id": "R3", "a": "market_square", "b": "civic_junction", "minutes": 2},
+    {"id": "R4", "a": "market_square", "b": "old_town", "minutes": 4},
+    {"id": "R5", "a": "civic_junction", "b": "dockyards", "minutes": 2},
+    {"id": "R6", "a": "civic_junction", "b": "riverside_trauma", "minutes": 3},
+    {"id": "R7", "a": "civic_junction", "b": "old_town", "minutes": 3},
+    {"id": "R8", "a": "dockyards", "b": "lighthouse_point", "minutes": 3},
+    {"id": "R9", "a": "lighthouse_point", "b": "riverside_trauma", "minutes": 3},
+    {"id": "R10", "a": "riverside_trauma", "b": "north_hill", "minutes": 4},
+    {"id": "R11", "a": "riverside_trauma", "b": "university_quarter", "minutes": 4},
+    {"id": "R12", "a": "old_town", "b": "university_quarter", "minutes": 3},
+    {"id": "R13", "a": "university_quarter", "b": "north_hill", "minutes": 3},
+    {"id": "R14", "a": "university_quarter", "b": "eastgate", "minutes": 3},
+    {"id": "R15", "a": "old_town", "b": "eastgate", "minutes": 4}
+  ],
+  "ambulances": [
+    {"id": "A1", "name": "Harbour 1", "base": "harbour_station", "capacity": 4},
+    {"id": "A2", "name": "University 2", "base": "university_quarter", "capacity": 4},
+    {"id": "A3", "name": "Dockyards 3", "base": "dockyards", "capacity": 4}
+  ],
+  "hospitals": [
+    {"id": "H1", "name": "Riverside Trauma Centre", "location": "riverside_trauma",
+     "facilities": ["trauma", "general"], "capacity": 6, "occupied": 2},
+    {"id": "H2", "name": "North Hill Heart Institute", "location": "north_hill",
+     "facilities": ["cardiac", "general"], "capacity": 4, "occupied": 3},
+    {"id": "H3", "name": "Eastgate General Hospital", "location": "eastgate",
+     "facilities": ["general"], "capacity": 8, "occupied": 5}
+  ],
+  "calls": [
+    {"caller_name": "Maya", "category": "traffic_accident", "priority": "high",
+     "location": "market_square", "patients": 2,
+     "message": "There's been a crash at the Market Square roundabout. Two people are hurt - one is bleeding and the other can't move his arm."},
+    {"caller_name": "Priya", "category": "medical", "priority": "moderate",
+     "location": "university_quarter", "patients": 1,
+     "message": "A student fainted in the library queue. She's awake now but still dizzy and very pale."},
+    {"caller_name": "Tomas", "category": "cardiac", "priority": "critical",
+     "location": "old_town", "patients": 1,
+     "message": "My grandfather just collapsed in the cafe on Old Town Lane. He was holding his chest and he's very pale."},
+    {"caller_name": "Henry", "category": "traffic_accident", "priority": "critical",
+     "location": "lighthouse_point", "patients": 3,
+     "message": "A delivery van rolled over on the lighthouse road. Three people are inside - they're stuck but talking."},
+    {"caller_name": "Aisha", "category": "medical", "priority": "high",
+     "location": "dockyards", "patients": 2,
+     "message": "Two dock workers are overheated and vomiting after a long shift inside the containers."}
+  ]
+}
